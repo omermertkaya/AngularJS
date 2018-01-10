@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <title>Title</title>
+
+    <script>
+        var benimuygulama=angular.module("myapp",[]);
+        benimuygulama.controller("mertKontrol",function ($scope) {
+
+            $scope.dizi=[{"ad":"ahmet","yas":28},
+                {"ad":"mehmet","yas":128},
+                {"ad":"esra","yas":28},
+                {"ad":"fikri","yas":5},
+                {"ad":"sinan","yas":75}]
+
+        });
+
+
+    </script>
+</head>
+
+
+<body ng-app="myapp" ng-controller="mertKontrol">
+
+<ul>
+    <li ng-repeat="veri in dizi">uyenin adi: {{veri.ad}}</br>
+        uyenin yasi: {{veri.yas}}
+
+
+    </li>
+</ul>
+
+</body>
+</html>

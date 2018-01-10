@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <title>Title</title>
+
+    <script>
+        var benimuygulama=angular.module("myapp",[]);
+        benimuygulama.controller("mertKontrol",function ($scope,$http) {
+
+            $http.get("https://jsonplaceholder.typicode.com/posts").then(function (response) {
+
+                $scope.veriler=response.data;
+
+
+            });
+
+        });
+
+
+    </script>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li{
+            pading:10px;
+            border:5px solid cornflowerblue;
+            margin: 10px;
+        }
+
+    </style>
+
+</head>
+
+
+<body ng-app="myapp" ng-controller="mertKontrol">
+
+<ul>
+    <li ng-repeat="veri in veriler"><h3>yorum:</h3>{{veri.body}}</li>
+</ul>
+
+</body>
+</html>

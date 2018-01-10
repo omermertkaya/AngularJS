@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myapp" ng-controller="MyController">
+<h3>{{state}}</h3>
+<button ng-click="clickme()">Click Me</button>
+
+<script>
+    var myapp = angular.module("myapp",[]);
+    myapp.controller("MyController",function ($scope) {
+        $scope.state="merhaba controller";
+        $scope.clickme=function () {
+            $scope.state="buton tiklandi"
+        }
+
+    })
+
+
+</script>
+
+
+</body>
+</html>
