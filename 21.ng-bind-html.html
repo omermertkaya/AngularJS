@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var firstModule = angular.module("firstSpace",[]);
+        firstModule.controller("firstController",function ($scope,$sce) {
+            $scope.deger="";
+            $scope.eylem=function () {
+                $scope.benimurl="https://teknoseyir.com/wp-content/uploads/2017/02/639245830c396b4.jpg";
+
+
+                $scope.deger=$sce.trustAsHtml("<h1>merhaba dunya</h1>")
+                
+            }
+
+
+
+        });
+
+
+
+
+    </script>
+
+
+
+</head>
+<body ng-app="firstSpace" ng-controller="firstController">
+<button ng-click="eylem()">Kodu Al</button></br>
+<div ng-bind-html="deger"></div></br>
+<img ng-src="{{benimurl}}">
+
+</body>
+</html>

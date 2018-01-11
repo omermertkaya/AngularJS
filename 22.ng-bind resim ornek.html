@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+
+<script>
+
+    var resimModule=angular.module("resimUygulamam", []);
+    resimModule.controller("ilkKontrol",function ($scope, $sce) {
+        $scope.deger=-1;
+
+        $scope.Mert="merhaba"
+
+        $scope.eylem=function () {
+
+            $scope.dizim=["https://www.bestepebloggers.com/wp-content/uploads/en-iyi-resim-ve-fotograf-format-donusturme-manset_640x360.jpg",
+                "https://sendeyim.net/uploads/resim-galerisi/kurt-resimleri_24387.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxclmA6f4ViDOB0UKoK-csi4dcHMymwx9-A4Ap8zO7NAWrHq03oA",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXxjVw9xKvzjO5Qw3fywzzNldFZFmT3WJs5Qgbf5XMw8UypO80",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2mxs0UviM1-2Z8K2E7uF8zkzwzwzDR5X9r1cF2kFD1FPqzY8U"]
+
+        }
+
+    });
+
+
+</script>
+
+
+
+
+<body ng-app="resimUygulamam"  ng-controller="ilkKontrol">
+<h1>{{Mert}}</h1>
+{{deger}}
+
+<button ng-click="eylem();deger=deger+1">Resim Degistir.</button>
+<img ng-src="{{dizim[deger]}}">
+
+
+</body>
+</html>
